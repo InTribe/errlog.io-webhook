@@ -27,7 +27,7 @@ describe('index.ts', () => {
           'the file has no content ../TESING_ERRLOGIO_API_KEY to be set.');
       }
 
-      let reporter = IErrLogIo(liveApiKey);
+      let reporter = ErrLogIo(liveApiKey);
       return expect(reporter.send({message: 'Test index.ts message'}))
         .to.be.eventually.be.true;
     });
