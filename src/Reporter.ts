@@ -1,5 +1,5 @@
 import {IReporterOptions} from './ReporterOptions';
-import {HttpRequest} from './HttpRequest';
+import {HttpRequester} from './HttpRequest';
 import {IRequestBody} from './IRequestBody';
 import {IErrLogIoOptions} from './IErrLogIoOptions';
 import {DefaultOptions} from './DefaultOptions';
@@ -8,7 +8,8 @@ let DateFormat = require('dateformat');
 
 export class Reporter {
   private defaultOptions: IReporterOptions = <IReporterOptions> {};
-  private httpRequestApi: HttpRequest;
+  private httpRequester: HttpRequester;
+
   constructor(options: IReporterOptions) {
 
     Object.assign(this.defaultOptions, DefaultOptions);
@@ -30,7 +31,7 @@ export class Reporter {
       throw new Error('Empty options.httpRequest attribute is unsupported');
     }
 
-    this.httpRequestApi = defaultOptions.httpRequest || new HttpRequest();
+    this.httpRequester = this.defaultOptions.httpRequester;
   }
 
   public send(body: IErrLogIoOptions): Promise<boolean> {
@@ -56,7 +57,6 @@ export class Reporter {
       body: myOptions,
     };
 
-    return this.httpRequestApi.post(packageData);
-
+    return this.httpRequester.post(packageData);
   }
 }

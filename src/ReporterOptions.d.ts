@@ -1,8 +1,8 @@
 import { IErrLogIoOptions } from './IErrLogIoOptions';
-import { HttpRequest } from './HttpRequest';
+import { HttpRequester } from './HttpRequest';
 export interface IReporterOptions {
     url?: string;
-    httpRequest?: HttpRequest;
+    httpRequester?: HttpRequester;
     dateFormat?: string;
     errLogIoOptions: IErrLogIoOptions;
 }

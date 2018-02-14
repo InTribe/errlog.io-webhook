@@ -8,7 +8,7 @@ chai.use(ChaiAsPromised);
 
 import {Reporter} from './Reporter';
 import {IReporterOptions} from './ReporterOptions';
-import {HttpRequest} from './HttpRequest';
+import {HttpRequester} from './HttpRequest';
 import {IErrLogIoOptions} from './IErrLogIoOptions';
 
 let DateFormat = require('dateformat');
@@ -90,7 +90,7 @@ describe('Reporter', () => {
 
       it('must fail if http request fails', () => {
 
-        const mockHttpRequest = new HttpRequest();
+        const mockHttpRequest = new HttpRequester();
         const errorMessage = 'Some Error Message';
 
         const options = <IReporterOptions> {
@@ -98,7 +98,7 @@ describe('Reporter', () => {
             apikey: 'hi-mom',
             message: 'My Message',
           },
-          httpRequest: mockHttpRequest,
+          httpRequester: mockHttpRequest,
         };
 
         simple.mock(mockHttpRequest, 'post')
@@ -128,14 +128,14 @@ describe('Reporter', () => {
     describe('success conditions', () => {
       it('must pass if message is set during construction', () => {
 
-        const mockHttpRequest = new HttpRequest();
+        const mockHttpRequest = new HttpRequester();
 
         const options = <IReporterOptions> {
           errLogIoOptions: {
             apikey: 'hi-mom',
             message: 'My Message',
           },
-          httpRequest: mockHttpRequest,
+          httpRequester: mockHttpRequest,
         };
 
         simple.mock(mockHttpRequest, 'post')
@@ -147,13 +147,13 @@ describe('Reporter', () => {
 
       it('must pass if message is set during send', () => {
 
-        const mockHttpRequest = new HttpRequest();
+        const mockHttpRequest = new HttpRequester();
 
         const options = <IReporterOptions> {
           errLogIoOptions: {
             apikey: 'hi-mom',
           },
-          httpRequest: mockHttpRequest,
+          httpRequester: mockHttpRequest,
         };
 
         simple.mock(mockHttpRequest, 'post')
@@ -165,13 +165,13 @@ describe('Reporter', () => {
 
       it('must send correct date', () => {
 
-        const mockHttpRequest = new HttpRequest();
+        const mockHttpRequest = new HttpRequester();
 
         const options = <IReporterOptions> {
           errLogIoOptions: {
             apikey: 'hi-mom',
           },
-          httpRequest: mockHttpRequest,
+          httpRequester: mockHttpRequest,
         };
 
         const date = new Date();
@@ -210,7 +210,8 @@ describe('Reporter', () => {
         };
 
         const body: IErrLogIoOptions = {
-          message: 'Testing', filename: 'Reporter.spec.ts',
+          message: 'Testing',
+          filename: 'Reporter.spec.ts',
         };
 
         return expect(new Reporter(options).send(body))

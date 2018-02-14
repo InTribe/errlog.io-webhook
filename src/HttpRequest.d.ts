@@ -1,4 +1,4 @@
 import { IRequestPostData } from './IRequestPostData';
-export declare class HttpRequest {
+export declare class HttpRequester {
     post(packageData: IRequestPostData): Promise<boolean>;
 }

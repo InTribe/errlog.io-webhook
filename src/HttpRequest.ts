@@ -1,7 +1,7 @@
 import RequestPromise = require('request-promise-native');
 import {IRequestPostData} from './IRequestPostData';
 
-export class HttpRequest {
+export class HttpRequester {
   public post(packageData: IRequestPostData): Promise<boolean> {
 
     const options = {
