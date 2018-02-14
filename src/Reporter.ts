@@ -47,7 +47,7 @@ export class Reporter {
 
     myOptions.errordate = DateFormat(
       (body.errordate || new Date()),
-      'yyyy-mm-dd hh:MM:ss',
+      this.defaultOptions.dateFormat,
     );
 
     const packageData = {
