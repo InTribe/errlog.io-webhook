@@ -25,6 +25,9 @@ export class Reporter {
       throw new Error('Empty options.apiKey attribute is unsupported');
     }
 
+    if (!(this.defaultOptions.httpRequester instanceof HttpRequester)) {
+      throw new Error('Empty options.httpRequest attribute is unsupported');
+    }
 
     this.httpRequestApi = defaultOptions.httpRequest || new HttpRequest();
   }
