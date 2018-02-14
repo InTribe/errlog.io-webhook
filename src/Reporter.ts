@@ -3,29 +3,28 @@ import {HttpRequest} from './HttpRequest';
 import {IRequestBody} from './IRequestBody';
 let DateFormat = require('dateformat');
 import {IErrLogIoOptions} from './IErrLogIoOptions';
+import {DefaultOptions} from './DefaultOptions';
 
 export class Reporter {
   private defaultOptions: IReporterOptions = <IReporterOptions> {};
   private httpRequestApi: HttpRequest;
+  constructor(options: IReporterOptions) {
 
-  constructor(defaultOptions: IReporterOptions) {
+    Object.assign(this.defaultOptions, DefaultOptions);
+    Object.assign(this.defaultOptions, options);
 
-    if (!defaultOptions) {
+    if (!this.defaultOptions) {
       throw new Error('Empty options argument is unsupported');
     }
 
-    if (!defaultOptions.errLogIoOptions) {
+    if (!this.defaultOptions.errLogIoOptions) {
       throw new Error('Empty options.errLogIoOptions argument is unsupported');
     }
 
-    if (!defaultOptions.errLogIoOptions.apikey) {
+    if (!this.defaultOptions.errLogIoOptions.apikey) {
       throw new Error('Empty options.apiKey attribute is unsupported');
     }
 
-    Object.assign(this.defaultOptions, defaultOptions);
-
-    this.defaultOptions.url = <string> this.defaultOptions.url ||
-      'https://relay.errlog.io/api/v1/log';
 
     this.httpRequestApi = defaultOptions.httpRequest || new HttpRequest();
   }
