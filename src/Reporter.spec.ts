@@ -17,15 +17,6 @@ describe('Reporter', () => {
 
   describe('construction', () => {
     describe('failure conditions', () => {
-
-      it('must fail if no errLogIoOptions is not set', () => {
-
-        // Cast null as options to get past Typescript compiler warnings
-        const options = <IReporterOptions> {};
-        return expect(() => new Reporter(options))
-          .to.throw('Empty options.errLogIoOptions argument is unsupported');
-      });
-
       it('must fail if no apiKey is not set', () => {
 
         // Cast null as options to get past Typescript compiler warnings
@@ -33,13 +24,21 @@ describe('Reporter', () => {
         return expect(() => new Reporter(options))
           .to.throw('Empty options.apiKey attribute is unsupported');
       });
-    });
+
+      it('must fail if empty apiKey', () => {
+
+        const options = {errLogIoOptions: {apikey: ''}};
+        return expect(() => new Reporter(options))
+          .to.throw('Empty options.apiKey attribute is unsupported');
+      });
+
       it('must fail if empty httpRequestNotSet', () => {
 
         const options = {errLogIoOptions: {apikey: 'not-empty'}, httpRequester: <HttpRequester> {}};
         return expect(() => new Reporter(options))
           .to.throw('Empty options.httpRequest attribute is unsupported');
       });
+  });
 
     describe('success conditions', () => {
       it('must pass if apiKey is set', () => {
