@@ -1,7 +1,6 @@
 import {IReporterOptions} from './ReporterOptions';
 import {HttpRequest} from './HttpRequest';
 import {IRequestBody} from './IRequestBody';
-let DateFormat = require('dateformat');
 import {IErrLogIoOptions} from './IErrLogIoOptions';
 import {DefaultOptions} from './DefaultOptions';
 
