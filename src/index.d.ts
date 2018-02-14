@@ -1,2 +1,2 @@
 import { Reporter } from './Reporter';
-export declare function IErrLogIo(apiKey: string): Reporter;
+export declare function ErrLogIo(apiKey: string): Reporter;
