@@ -187,12 +187,13 @@ describe('Reporter', () => {
 
       });
 
-      it('must fail with appropriate error', () => {
-        const liveApiKey = process.env.ERRLOGIO_API_KEY;
+      it('e2e test', () => {
+        const liveApiKey = fs.readFileSync(
+          './TESTING_ERRLOGIO_API_KEY', 'utf8');
 
         if (!liveApiKey) {
           throw new Error(
-            'expecting the environment variable ERRLOGIO_API_KEY to be set.');
+            'the file has no content ../TESING_ERRLOGIO_API_KEY to be set.');
         }
 
         const options = <IReporterOptions> {

@@ -17,11 +17,12 @@ describe('index.ts', () => {
 
   describe('send error', () => {
     it('must send a message (requires real API key', () => {
-      const liveApiKey = process.env.ERRLOGIO_API_KEY;
+      const liveApiKey = fs.readFileSync(
+        './TESTING_ERRLOGIO_API_KEY', 'utf8');
 
       if (!liveApiKey) {
         throw new Error(
-          'expecting the environment variable ERRLOGIO_API_KEY to be set.');
+          'the file has no content ../TESING_ERRLOGIO_API_KEY to be set.');
       }
 
       let reporter = IErrLogIo(liveApiKey);
