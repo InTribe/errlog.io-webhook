@@ -5,6 +5,8 @@ let DateFormat = require('dateformat');
 import {IErrLogIoOptions} from './IErrLogIoOptions';
 import {DefaultOptions} from './DefaultOptions';
 
+let DateFormat = require('dateformat');
+
 export class Reporter {
   private defaultOptions: IReporterOptions = <IReporterOptions> {};
   private httpRequestApi: HttpRequest;
