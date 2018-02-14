@@ -34,6 +34,12 @@ describe('Reporter', () => {
           .to.throw('Empty options.apiKey attribute is unsupported');
       });
     });
+      it('must fail if empty httpRequestNotSet', () => {
+
+        const options = {errLogIoOptions: {apikey: 'not-empty'}, httpRequester: <HttpRequester> {}};
+        return expect(() => new Reporter(options))
+          .to.throw('Empty options.httpRequest attribute is unsupported');
+      });
 
     describe('success conditions', () => {
       it('must pass if apiKey is set', () => {
