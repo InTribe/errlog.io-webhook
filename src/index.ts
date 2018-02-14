@@ -1,7 +1,7 @@
 import {Reporter} from './Reporter';
 import {IReporterOptions} from './ReporterOptions';
 
-export function IErrLogIo(apiKey: string) {
+export function ErrLogIo(apiKey: string) {
   const options: IReporterOptions = {
     errLogIoOptions: {
       apikey: apiKey,
