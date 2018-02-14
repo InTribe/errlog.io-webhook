@@ -11,7 +11,8 @@
     "test": "mocha --timeout 10000 src/**/*.spec.js",
     "test:watch": "npm run compile:clean && concurrently --allow-restart --success first 'npm run compile:watch' 'echo $(ls src)' 'sleep 1 && mocha --timeout 10000 --watch src/**/*.spec.js'"
   },
-  "main": "src/",
+  "main": "src/index",
+  "types": "src/index.d",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/intribeco/errlog.io-webhook.git"
