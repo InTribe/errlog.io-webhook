@@ -12,3 +12,7 @@ node_modules/
 # typecscript compiled files
 src/**/*.js
 src/**/*.js.map
+
+
+# API Key for testing
+TESTING_ERRLOGIO_API_KEY
