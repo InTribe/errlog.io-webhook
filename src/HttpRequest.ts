@@ -15,7 +15,6 @@ export class HttpRequest {
       .then(
         () => { return true; },
         (result: any) => {
-          console.log('arse biscuite', result);
           return true;
         },
       );
