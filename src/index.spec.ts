@@ -1,7 +1,9 @@
 import {expect} from 'chai';
 import * as chai from 'chai';
 import * as ChaiAsPromised from 'chai-as-promised';
-import {IErrLogIo} from './index';
+import * as fs from 'fs';
+
+import {ErrLogIo} from './index';
 import {Reporter} from './Reporter';
 
 chai.use(ChaiAsPromised);
@@ -10,7 +12,7 @@ describe('index.ts', () => {
 
   describe('construction', () => {
     it('must return a constructed object', () => {
-      let reporter = IErrLogIo('myapi-key');
+      let reporter = ErrLogIo('myapi-key');
       return expect(reporter).to.be.instanceof(Reporter);
     });
   });

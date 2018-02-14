@@ -2,6 +2,7 @@ import {expect} from 'chai';
 import * as chai from 'chai';
 import * as ChaiAsPromised from 'chai-as-promised';
 import * as simple from 'simple-mock';
+import * as fs from 'fs';
 
 chai.use(ChaiAsPromised);
 
@@ -204,7 +205,7 @@ describe('Reporter', () => {
         };
 
         const body: IErrLogIoOptions = {
-          message: 'Testing',
+          message: 'Testing', filename: 'Reporter.spec.ts',
         };
 
         return expect(new Reporter(options).send(body))
