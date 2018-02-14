@@ -14,7 +14,7 @@ export class HttpRequest {
     return RequestPromise(options)
       .then(
         () => { return true; },
-        (result: Response) => {
+        (result: any) => {
           console.log('arse biscuite', result);
           return true;
         },
