@@ -8,6 +8,7 @@
     "compile": "tsc --project src/ ",
     "compile:clean": "rm -rf src/*.js && rm -rf src/*.js.map",
     "compile:watch": "tsc --watch --project src/",
+    "lint": "tslint --project ./src --format verbose",
     "test": "npm run compile:clean && npm run compile && mocha --timeout 10000 src/**/*.spec.js",
     "test:watch": "npm run compile:clean && concurrently --allow-restart --success first 'npm run compile:watch' 'echo $(ls src)' 'sleep 1 && mocha --timeout 10000 --watch src/**/*.spec.js'"
   },
@@ -52,6 +53,7 @@
     "typescript": "^2.7.1"
   },
   "pre-commit": [
+    "lint",
     "test"
   ]
 }
