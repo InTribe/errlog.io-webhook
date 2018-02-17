@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var HttpRequest_1 = require("./HttpRequest");
+var HttpRequester_1 = require("./HttpRequester");
 var DefaultOptions_1 = require("./DefaultOptions");
 var DateFormat = require('dateformat');
 var Reporter = /** @class */ (function () {
@@ -17,7 +17,7 @@ var Reporter = /** @class */ (function () {
         if (!this.defaultOptions.errLogIoOptions.apikey) {
             throw new Error('Empty options.apiKey attribute is unsupported');
         }
-        if (!(this.defaultOptions.httpRequester instanceof HttpRequest_1.HttpRequester)) {
+        if (!(this.defaultOptions.httpRequester instanceof HttpRequester_1.HttpRequester)) {
             throw new Error('Empty options.httpRequest attribute is unsupported');
         }
         this.httpRequester = this.defaultOptions.httpRequester;

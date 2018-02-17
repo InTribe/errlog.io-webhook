@@ -1,5 +1,5 @@
 import {IReporterOptions} from './ReporterOptions';
-import {HttpRequester} from './HttpRequest';
+import {HttpRequester} from './HttpRequester';
 import {IRequestBody} from './IRequestBody';
 import {IErrLogIoOptions} from './IErrLogIoOptions';
 import {DefaultOptions} from './DefaultOptions';

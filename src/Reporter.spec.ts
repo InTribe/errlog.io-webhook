@@ -8,7 +8,7 @@ chai.use(ChaiAsPromised);
 
 import {Reporter} from './Reporter';
 import {IReporterOptions} from './ReporterOptions';
-import {HttpRequester} from './HttpRequest';
+import {HttpRequester} from './HttpRequester';
 import {IErrLogIoOptions} from './IErrLogIoOptions';
 
 let DateFormat = require('dateformat');

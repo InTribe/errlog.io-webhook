@@ -1,5 +1,5 @@
 import { IErrLogIoOptions } from './IErrLogIoOptions';
-import { HttpRequester } from './HttpRequest';
+import { HttpRequester } from './HttpRequester';
 export interface IReporterOptions {
     url?: string;
     httpRequester?: HttpRequester;

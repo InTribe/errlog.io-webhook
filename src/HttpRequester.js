@@ -19,4 +19,4 @@ var HttpRequester = /** @class */ (function () {
     return HttpRequester;
 }());
 exports.HttpRequester = HttpRequester;
-//# sourceMappingURL=HttpRequest.js.map
+//# sourceMappingURL=HttpRequester.js.map

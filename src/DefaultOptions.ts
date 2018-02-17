@@ -1,5 +1,5 @@
 import {IReporterOptions} from './ReporterOptions';
-import {HttpRequester} from './HttpRequest';
+import {HttpRequester} from './HttpRequester';
 
 export const DefaultOptions: IReporterOptions = {
   url: 'https://relay.errlog.io/api/v1/log',

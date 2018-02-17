@@ -7,7 +7,7 @@ var simple = require("simple-mock");
 var fs = require("fs");
 chai.use(ChaiAsPromised);
 var Reporter_1 = require("./Reporter");
-var HttpRequest_1 = require("./HttpRequest");
+var HttpRequester_1 = require("./HttpRequester");
 var DateFormat = require('dateformat');
 describe('Reporter', function () {
     describe('construction', function () {
@@ -67,7 +67,7 @@ describe('Reporter', function () {
                     .to.eventually.be.rejectedWith('Unsupported message value');
             });
             it('must fail if http request fails', function () {
-                var mockHttpRequest = new HttpRequest_1.HttpRequester();
+                var mockHttpRequest = new HttpRequester_1.HttpRequester();
                 var errorMessage = 'Some Error Message';
                 var options = {
                     errLogIoOptions: {
@@ -97,7 +97,7 @@ describe('Reporter', function () {
         });
         describe('success conditions', function () {
             it('must pass if message is set during construction', function () {
-                var mockHttpRequest = new HttpRequest_1.HttpRequester();
+                var mockHttpRequest = new HttpRequester_1.HttpRequester();
                 var options = {
                     errLogIoOptions: {
                         apikey: 'hi-mom',
@@ -111,7 +111,7 @@ describe('Reporter', function () {
                     .to.eventually.be.true;
             });
             it('must pass if message is set during send', function () {
-                var mockHttpRequest = new HttpRequest_1.HttpRequester();
+                var mockHttpRequest = new HttpRequester_1.HttpRequester();
                 var options = {
                     errLogIoOptions: {
                         apikey: 'hi-mom',
@@ -124,7 +124,7 @@ describe('Reporter', function () {
                     .to.eventually.be.true;
             });
             it('must send correct date', function () {
-                var mockHttpRequest = new HttpRequest_1.HttpRequester();
+                var mockHttpRequest = new HttpRequester_1.HttpRequester();
                 var options = {
                     errLogIoOptions: {
                         apikey: 'hi-mom',
