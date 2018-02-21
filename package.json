@@ -24,7 +24,7 @@
     "logging",
     "monitoring"
   ],
-  "author": "Aaron Chilcott <aaron@intribe.co>",
+  "author": "Aaron Chilcott <foss@intribe.co>",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/intribeco/errlog.io-webhook/issues"
@@ -53,6 +53,6 @@
   },
   "pre-commit": [
     "lint",
-    "test"
+    "build"
   ]
 }
