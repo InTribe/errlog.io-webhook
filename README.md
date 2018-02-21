@@ -1,6 +1,6 @@
 # errlog.io-webhook
 
-An alpha version NodeJs module to the [errlog.io webhook](https://errlog.io/docs/webhook-api).
+An beta version NodeJs module to the [errlog.io webhook](https://errlog.io/docs/webhook-api).
 
 ## Install
 
@@ -8,12 +8,8 @@ An alpha version NodeJs module to the [errlog.io webhook](https://errlog.io/docs
 
 Add the following to your package.json file under dependencies:
 
-```json
-{
-  "dependencies": {
-    "errlog.io-webhook": "git@github.com:intribeco/errlog.io-webhook.git"
-  }
-}
+```bash
+npm install errlog.io-webhook
 ```
 
 ## Import

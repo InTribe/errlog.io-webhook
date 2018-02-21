@@ -16,7 +16,7 @@
   "types": "src/index.d",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/intribeco/errlog.io-webhook.git"
+    "url": "git+https://github.com/intribe/errlog.io-webhook.git"
   },
   "keywords": [
     "errlog.io",
@@ -27,9 +27,9 @@
   "author": "Aaron Chilcott <foss@intribe.co>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/intribeco/errlog.io-webhook/issues"
+    "url": "https://github.com/intribe/errlog.io-webhook/issues"
   },
-  "homepage": "https://github.com/intribeco/errlog.io-webhook#readme",
+  "homepage": "https://github.com/intribe/errlog.io-webhook#readme",
   "dependencies": {
     "@types/request": "^2.47.0",
     "@types/request-promise-native": "^1.0.13",
