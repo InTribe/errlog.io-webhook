@@ -1,6 +1,6 @@
 {
   "name": "errlog.io-webhook",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "NodeJS module for the errlog.io webhook",
   "scripts": {
     "prepublish": "npm run build",
