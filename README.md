@@ -27,7 +27,7 @@ errLogIo.send({message: 'The penguins are escaping!', applicationname: 'my-shiny
 ### Payload Variables
 
 An exhaustive and up-to-date list of payload variables can be found here: 
-[https://errlog.io/docs/webhook-api](https://errlog.io/docs/payload-variables)
+[https://errlog.io/docs/webhook-api](https://errlog.io/docs/webhook-api)
 
 At the time of writing, the following list of variables were available:
 
