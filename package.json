@@ -31,11 +31,11 @@
   },
   "homepage": "https://github.com/intribe/errlog.io-webhook#readme",
   "dependencies": {
-    "@types/request": "^2.47.0",
-    "@types/request-promise-native": "^1.0.13",
-    "dateformat": "^3.0.3",
-    "request": "^2.83.0",
-    "request-promise-native": "^1.0.5"
+    "@types/request": "2.47.0",
+    "@types/request-promise-native": "1.0.14",
+    "dateformat": "3.0.3",
+    "request": "2.85.0",
+    "request-promise-native": "1.0.5"
   },
   "devDependencies": {
     "@types/chai": "^4.1.2",
